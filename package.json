@@ -6,7 +6,13 @@
   "author": "muhammed shafeeque",
   "license": "MIT",
   "scripts": {
-    "start": "npm run dev",
+    "start": "node dist/index.js",
+    "dev": "ts-node-dev --require tsconfig-paths/register --respawn --transpile-only src/index.ts",
+    "build": "tsc",
+    "proto:gen": "bash ./protogen.sh",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "clean": "rimraf dist",
     "lint": "eslint . --ext js,jsx,ts,tsx",
     "lint:fix": "npm run lint -- --fix",
     "prettier": "prettier . --ext .js,.jsx,.ts,.tsx --check",
@@ -14,14 +20,20 @@
     "format": "npm run prettier:fix && npm run lint:fix"
   },
   "dependencies": {
+    "@grpc/grpc-js": "^1.13.0",
+    "@grpc/proto-loader": "^0.7.13",
     "@mdshafeeq-repo/edulearn-common": "^1.0.3",
     "@types/bcrypt": "^5.0.2",
     "bcrypt": "^5.1.1",
     "class-transformer": "^0.5.1",
     "class-validator": "^0.14.1",
     "inversify": "^7.0.1",
+    "kafkajs": "^2.2.4",
     "pg": "^8.13.3",
+    "redis": "^4.7.0",
     "reflect-metadata": "^0.2.2",
+    "ts-proto": "^2.6.1",
+    "tsconfig-paths": "^4.0.0",
     "tslib": "^2.8.1",
     "typeorm": "^0.3.21",
     "uuid": "^11.1.0"
@@ -39,6 +51,7 @@
     "supertest": "^7.0.0",
     "ts-jest": "^29.2.6",
     "ts-node": "^10.9.2",
+    "ts-node-dev": "^2.0.0",
     "typescript": "^5.8.2"
   }
 }
