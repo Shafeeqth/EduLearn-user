@@ -47,6 +47,12 @@ export default interface IUserRepository {
   getAllInstructors(page: number, limit: number): Promise<IUser[] | []>;
 
   /**
+   * Retrieves all users emails.
+   * @returns A promise that resolves to an array of string, or an empty array if no users are found.
+   */
+  getAllUserEmails(): Promise<string[] | []>;
+
+  /**
    * Creates a new user.
    * @param user - The user to create.
    * @returns A promise that resolves to the created user.

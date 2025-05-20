@@ -1,8 +1,9 @@
-import { UserRoles } from '@/shared/types/user-roles';
+import { AuthType, UserRoles } from '@/shared/types/user-types';
 import { IUser } from '../interfaces/user';
+import { UserStatus } from '@/shared/types/user-status';
 
 export default class User implements IUser {
-  public isVerified: boolean = false;
+  public status: UserStatus = UserStatus.NOT_VERIFIED;
   public createdAt: Date;
   public updatedAt: Date;
   public lastLogin: Date;
@@ -10,12 +11,13 @@ export default class User implements IUser {
   public constructor(
     public readonly id: string,
     public readonly email: string,
-    public readonly password: string,
+    public authType: AuthType,
     public role: UserRoles,
+    public readonly password?: string,
     public firstName?: string,
     public lastName?: string,
-    public phone?: string,
     public avatar?: string,
+    public phone?: string,
   ) {
     this.createdAt = new Date();
     this.updatedAt = new Date();
