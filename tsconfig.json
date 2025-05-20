@@ -5,8 +5,8 @@
     "outDir": "./dist",
     "rootDir": "./src",
     "strict": true, // Enable all strict type-checking options
-    "moduleResolution": "node",
-    "esModuleInterop": true,
+    "moduleResolution": "node", // Ensure this is set to "node"
+    "esModuleInterop": true, // Ensure this is true
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
     "emitDecoratorMetadata": true, // Required for decorators like in Class-validator, TypeORM
@@ -17,6 +17,9 @@
       "@/*": ["./*"]
     },
     "lib": ["es2020"],
-    "strictPropertyInitialization": false
-  }
+    "strictPropertyInitialization": false,
+    "allowSyntheticDefaultImports": true
+  },
+  // "include": ["src/**/*.ts"],
+  "exclude": ["node_modules", "dist"] // Exclude test files from compilation , "**/*.spec.ts"
 }
