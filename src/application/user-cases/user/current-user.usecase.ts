@@ -12,10 +12,10 @@ export default class CurrentUserUseCaseImpl implements ICurrentUserUseCase {
     @inject(TYPES.IUserRepository) private readonly userRepository: IUserRepository,
   ) {}
   public async execute(dto: CurrentUserDto): Promise<IUser> {
-    // Checks whether user already exist with provided email
+    // Checks whether user exist with provided email
     const user = await this.userRepository.findById(dto.userId);
 
-    // Throws an error if user already exist with given email
+    // Throws an error if user NOT exist with given email
     if (!user) throw new UserNotFoundError();
 
     return user;

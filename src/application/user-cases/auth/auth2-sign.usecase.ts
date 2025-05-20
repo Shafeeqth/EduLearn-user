@@ -60,7 +60,7 @@ export default class Auth2SignUseCaseImpl implements IAuth2SignUseCase {
     });
 
     // Generate refresh token with user data
-    const refreshToken = this.tokenService.generateAccessToken({
+    const refreshToken = this.tokenService.generateRefreshToken({
       userId: user.id,
       username: user.firstName + ' ' + (user.lastName || ''),
       role: user.role,
