@@ -2,8 +2,8 @@ import DetailedUserDto from '@/application/dto/user/detailed-user.dto';
 import { IUser } from '@/domain/interfaces/user';
 
 /**
- * Interface representing the use case to fetch Currently logged in user
- * using a provided userID.
+ * Interface representing the use case to fetch detailed Info of user
+ * using a provided userId.
  */
 export interface IDetailedUserUseCase {
   /**

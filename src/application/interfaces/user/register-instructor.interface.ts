@@ -8,7 +8,7 @@ import { IAuthTokens } from '@/shared/types/auth.tokens';
 export interface IRegisterInstructorUseCase {
   /**
    * @param userId ID of the User
-   * @returns A Promise resolve to `IUser`
+   * @returns A Promise resolve to `IAuthTokens & { user: IUser }`
    */
   execute(dto: RegisterInstructorDto): Promise<IAuthTokens & { user: IUser }>;
 }

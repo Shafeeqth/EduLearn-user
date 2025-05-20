@@ -1,4 +1,3 @@
-
 /**
  * Interface representing the use case to fetch all registered emails
  */

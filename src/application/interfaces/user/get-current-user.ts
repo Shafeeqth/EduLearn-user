@@ -1,7 +1,6 @@
 import CurrentUserDto from '@/application/dto/user/current-user.dto';
 import { IUser } from '@/domain/interfaces/user';
 
-
 /**
  * Interface representing the use case to fetch Currently logged in user
  * using a provided userID.
