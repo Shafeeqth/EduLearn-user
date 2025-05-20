@@ -141,7 +141,7 @@ export class GrpcServer<T extends GrpcController> {
     process.on('SIGINT', () => this.shutdown());
   }
 
-  public shutdown(): Promise<void> {
+  public async shutdown(): Promise<void> {
     return new Promise((resolve, reject) => {
       this.server.tryShutdown((err) => {
         if (err) {
