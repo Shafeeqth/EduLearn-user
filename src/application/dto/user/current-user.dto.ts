@@ -1,6 +1,6 @@
-import { IsEmail } from 'class-validator';
+import { IsString } from 'class-validator';
 
 export default class CurrentUserDto {
-  @IsEmail({}, { message: 'Invalid email format' })
+  @IsString({ message: 'userId must be string' })
   userId: string;
 }

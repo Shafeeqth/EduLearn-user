@@ -1,5 +1,5 @@
 import { IsEmail, IsNotEmpty, MinLength, IsEnum, IsString } from 'class-validator';
-import { UserRoles } from '@/shared/types/user-roles';
+import { AuthType, UserRoles } from '@/shared/types/user-types';
 import { IUser } from '@/domain/interfaces/user';
 
 export default class RegisterUserDto implements Partial<IUser> {
@@ -20,4 +20,7 @@ export default class RegisterUserDto implements Partial<IUser> {
 
   @IsEnum(UserRoles, { message: 'Role must be one of the valid user roles' })
   role: UserRoles;
+
+  @IsEnum(AuthType, { message: 'AuthType must be one of the valid auth types' })
+  authType: AuthType;
 }
